@@ -143,6 +143,10 @@ Backend URL:
 ```
 http://127.0.0.1:8002
 ```
+- OR
+```
+http://<Your-Ip-Server>:8002
+```
 
 ---
 
@@ -165,6 +169,90 @@ Frontend URL:
 http://localhost:3000
 ```
 
+### 🚀 Frontend Production
+
+* First:
+
+You Can Read **[Npm Guide Help](https://github.com/MAPSIM-co/Mapsim_Finincial_app/blob/main/my_financial_plan_frontend/README.md)**
+
+* Then :
+
+```bash
+npm run build
+```
+* Install `nginx-core` :
+
+```bash
+sudo apt update
+sudo apt install -y nginx-core
+```
+```bash
+nginx -v
+```
+Output :
+```
+nginx version: nginx/1.18.0
+```
+
+```bash
+sudo mkdir -p /var/www/mapsim-frontend
+sudo cp -r build/* /var/www/mapsim-frontend/
+sudo chown -R www-data:www-data /var/www/mapsim-frontend
+sudo chmod -R 755 /var/www/mapsim-frontend
+```
+
+```bash
+sudo nano /etc/nginx/sites-available/mapsim-frontend
+```
+```bash
+server {
+    listen 80;
+    server_name _;
+
+    root /var/www/mapsim-frontend;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    error_log  /var/log/nginx/mapsim-frontend.error.log;
+    access_log /var/log/nginx/mapsim-frontend.access.log;
+}
+```
+```
+CTRL + O
+ENTER
+CTRL + X
+```
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+```
+* Check Out put :
+```bash
+ls -l /etc/nginx/sites-enabled
+```
+* Check Config :
+```bash
+sudo nginx -t
+```
+Visit This Out Put is OK ...
+```
+syntax is ok
+test is successful
+```
+* Restart `NGINX` :
+```bash
+sudo systemctl reload nginx
+```
+Finish :
+```
+http://<Your-Ip-Server>
+
+OR
+
+http://localhost
+```
 ---
 
 ## 🗄️ Database Setup
@@ -223,12 +311,11 @@ nano .env
 ```
 
 ```env
-DB_TYPE=mysql
-DB_HOST=127.0.0.1
+DB_USER=mapsim_user
+DB_PASS=<Your-Strong-Password>
+DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=mapsim_financial_db
-DB_USER=mapsim_user
-DB_PASSWORD=STRONG_PASSWORD
 ```
 
 Add `.env` to `.gitignore`:
