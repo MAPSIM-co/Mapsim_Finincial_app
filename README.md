@@ -301,8 +301,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/opt/Mapsim_Finincial_app/my_financial_plan_backend
-ExecStart=/opt/Mapsim_Finincial_app/my_financial_plan_backend/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8002
+WorkingDirectory=/root/Mapsim_Finincial_app/my_financial_plan_backend
+ExecStart=/root/Mapsim_Finincial_app/my_financial_plan_backend/venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 8002
 Restart=always
 Environment=PYTHONUNBUFFERED=1
 
