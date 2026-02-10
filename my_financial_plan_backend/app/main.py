@@ -27,7 +27,7 @@ app = FastAPI(title="My Financial Plan API")
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000"#,
-    #"http://<Your-IP-Server>:3000",
+    #"http://<Your-IP-Server>:3000"
 ]
 
 
