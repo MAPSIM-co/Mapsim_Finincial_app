@@ -334,6 +334,28 @@ sudo ufw reload
 
 ---
 
+## Ecternal Command 
+
+1- Backend 
+
+* Go to 'Backend' Folder :
+
+```bash
+cd ~/Mapsim_Finincial_app/my_financial_plan_backend/
+```
+```bash
+cd ~/Mapsim_Finincial_app/my_financial_plan_backend/app/
+```
+
+2- Frontend :
+
+* Go to 'Frontend' Folder :
+
+```bash
+cd ~/Mapsim_Finincial_app/my_financial_plan_frontend/my_financial_plan_frontend/
+```
+
+
 ## 🚀 Production Deployment Notes
 
 - Use Nginx as reverse proxy
