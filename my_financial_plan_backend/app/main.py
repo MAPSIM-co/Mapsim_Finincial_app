@@ -24,12 +24,16 @@ app = FastAPI(title="My Financial Plan API")
 
 # CORS
 
+from fastapi.middleware.cors import CORSMiddleware
+
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000"#,
-    #"http://<Your-IP-Server>:3000"
-]
+    "http://127.0.0.1:3000",
 
+    # 🔥 فرانت production wit nginx
+    #"http://<Your-Ip-Server>",
+    #"http://<Your-Ip-Server>:80",
+]
 
 app.add_middleware(
     CORSMiddleware,
