@@ -315,7 +315,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable mapsim-backend
 sudo systemctl start mapsim-backend
 ```
-
+Check Status :
+```bash
+sudo systemctl status mapsim-backend
+```
 ---
 
 ## 🔐 Firewall Configuration
