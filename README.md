@@ -319,6 +319,10 @@ Check Status :
 ```bash
 sudo systemctl status mapsim-backend
 ```
+Check form Browser:
+```
+curl http://<Your-ip-server>:8002/
+```
 ---
 
 ## 🔐 Firewall Configuration
