@@ -23,12 +23,11 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="My Financial Plan API")
 
 # CORS
-origins = ["http://localhost:3000"]
+
 origins = [
     "http://localhost:3000",
-    "http://172.20.10.2:3000",
-    "http://0.0.0.0:3000",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000"#,
+    #"http://<Your-IP-Server>:3000",
 ]
 
 
