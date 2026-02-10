@@ -127,12 +127,15 @@ cd Mapsim_Finincial_app
 
 ```bash
 cd my_financial_plan_backend
-
+```
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
+```
+```bash
 pip install -r requirements.txt
-
+```
+```bash
 uvicorn main:app --host 0.0.0.0 --port 8002 --reload
 ```
 
